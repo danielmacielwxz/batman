@@ -1,0 +1,207 @@
+/* Paleta: noite de Gotham + amarelo do Bat-sinal */
+:root {
+  --noite: #12161f;
+  --concreto: #1c2230;
+  --nevoa: #9aa4b5;
+  --papel: #e8ebf1;
+  --sinal: #f5c518;
+  --linha: #2b3345;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--noite);
+  color: var(--papel);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.7;
+}
+
+/* ---------- Topo ---------- */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  padding: 2rem;
+  background: linear-gradient(180deg, #0a0d14 0%, var(--noite) 100%);
+}
+
+/* O Bat-sinal: um círculo de luz feito só com CSS */
+.sinal {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  width: min(60vw, 420px);
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--sinal) 0%, #d9a800 55%, transparent 72%);
+  box-shadow: 0 0 120px 40px rgba(245, 197, 24, 0.25);
+}
+
+/* Silhueta do morcego, desenhada com formas do CSS */
+.sinal::before {
+  content: "";
+  position: absolute;
+  top: 34%;
+  left: 12%;
+  width: 76%;
+  height: 32%;
+  background: #0a0d14;
+  clip-path: polygon(
+    0% 20%, 12% 0%, 26% 22%, 38% 12%, 43% 0%, 50% 14%,
+    57% 0%, 62% 12%, 74% 22%, 88% 0%, 100% 20%,
+    92% 62%, 76% 48%, 62% 82%, 50% 100%,
+    38% 82%, 24% 48%, 8% 62%
+  );
+}
+
+.hero-texto {
+  position: relative;
+  max-width: 44rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+h1 {
+  margin: 0;
+  font-family: Impact, "Arial Narrow Bold", "Helvetica Neue", sans-serif;
+  font-size: clamp(4rem, 16vw, 9rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+}
+
+.lema {
+  margin: 0.5rem 0 1.5rem;
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--nevoa);
+}
+
+nav a {
+  display: inline-block;
+  margin: 0 1rem 0.5rem 0;
+  padding: 0.25rem 0;
+  color: var(--papel);
+  text-decoration: none;
+  border-bottom: 2px solid var(--linha);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95rem;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  border-color: var(--sinal);
+  outline: none;
+}
+
+/* ---------- Conteúdo ---------- */
+main {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+section {
+  padding: 3.5rem 0 1rem;
+  border-top: 1px solid var(--linha);
+}
+
+section:first-child { border-top: none; }
+
+h2 {
+  margin: 0 0 1rem;
+  font-family: Impact, "Arial Narrow Bold", "Helvetica Neue", sans-serif;
+  font-size: 2.25rem;
+  font-weight: 400;
+  color: var(--sinal);
+}
+
+p { margin: 0 0 1rem; }
+
+/* Aliados */
+.lista { margin: 0; }
+
+.lista div {
+  padding: 1rem 0 1rem 1rem;
+  border-left: 3px solid var(--sinal);
+  margin-bottom: 1rem;
+  background: var(--concreto);
+}
+
+.lista dt {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.lista dd {
+  margin: 0.25rem 0 0;
+  color: var(--nevoa);
+}
+
+/* Vilões */
+.viloes {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.viloes li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--linha);
+}
+
+.viloes strong {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--sinal);
+}
+
+/* Linha do tempo: aqui a ordem importa, por isso é uma lista ordenada */
+.linha-tempo {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.linha-tempo li {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--linha);
+}
+
+.ano {
+  font-family: Impact, "Arial Narrow Bold", sans-serif;
+  font-size: 1.4rem;
+  color: var(--sinal);
+}
+
+/* ---------- Rodapé ---------- */
+footer {
+  padding: 2rem 1.5rem;
+  background: #0a0d14;
+  color: var(--nevoa);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+footer p { max-width: 44rem; margin: 0 auto; }
+
+/* ---------- Celular ---------- */
+@media (max-width: 600px) {
+  .linha-tempo li { grid-template-columns: 1fr; gap: 0.25rem; }
+  .hero { min-height: 80vh; }
+}
+
+/* ---------- Movimento reduzido ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
