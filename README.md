@@ -24,7 +24,3 @@ index.html   página principal
 style.css    estilos
 README.md    este arquivo
 ```
-
-## Aviso
-
-Batman e os personagens citados são marcas da DC Comics. Este é um projeto escolar, sem fins comerciais e não oficial.
