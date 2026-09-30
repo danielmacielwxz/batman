@@ -1,4 +1,3 @@
-/* Paleta: noite de Gotham + amarelo do Bat-sinal */
 :root {
   --noite: #12161f;
   --concreto: #1c2230;
@@ -20,7 +19,6 @@ body {
   line-height: 1.7;
 }
 
-/* ---------- Topo ---------- */
 .hero {
   position: relative;
   min-height: 90vh;
@@ -31,7 +29,6 @@ body {
   background: linear-gradient(180deg, #0a0d14 0%, var(--noite) 100%);
 }
 
-/* O Bat-sinal: um círculo de luz feito só com CSS */
 .sinal {
   position: absolute;
   top: 12%;
@@ -44,7 +41,6 @@ body {
   box-shadow: 0 0 120px 40px rgba(245, 197, 24, 0.25);
 }
 
-/* Silhueta do morcego, desenhada com formas do CSS */
 .sinal::before {
   content: "";
   position: absolute;
@@ -101,7 +97,6 @@ nav a:focus-visible {
   outline: none;
 }
 
-/* ---------- Conteúdo ---------- */
 main {
   max-width: 44rem;
   margin: 0 auto;
@@ -125,7 +120,6 @@ h2 {
 
 p { margin: 0 0 1rem; }
 
-/* Aliados */
 .lista { margin: 0; }
 
 .lista div {
@@ -145,7 +139,6 @@ p { margin: 0 0 1rem; }
   color: var(--nevoa);
 }
 
-/* Vilões */
 .viloes {
   margin: 0;
   padding: 0;
@@ -162,7 +155,6 @@ p { margin: 0 0 1rem; }
   color: var(--sinal);
 }
 
-/* Linha do tempo: aqui a ordem importa, por isso é uma lista ordenada */
 .linha-tempo {
   margin: 0;
   padding: 0;
@@ -183,7 +175,6 @@ p { margin: 0 0 1rem; }
   color: var(--sinal);
 }
 
-/* ---------- Rodapé ---------- */
 footer {
   padding: 2rem 1.5rem;
   background: #0a0d14;
@@ -195,13 +186,11 @@ footer {
 
 footer p { max-width: 44rem; margin: 0 auto; }
 
-/* ---------- Celular ---------- */
 @media (max-width: 600px) {
   .linha-tempo li { grid-template-columns: 1fr; gap: 0.25rem; }
   .hero { min-height: 80vh; }
 }
 
-/* ---------- Movimento reduzido ---------- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
